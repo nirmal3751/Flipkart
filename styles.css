@@ -38,7 +38,7 @@ body {
 .logoSection {
     /* Main container for logo and text */
     margin-right: 20px;
-    width: 140px; /* Adjusted width to fit the text */
+    width: 140px; 
 }
 
 .flipkart-logo {
@@ -52,7 +52,6 @@ body {
     font-size: 11px;
     font-style: italic;
     color: inherit;
-    /* Removed fixed width and height */
     margin-bottom: 5px;
     display: inline;
 }
@@ -72,7 +71,6 @@ body {
     font-style: normal;
     margin-left: 3px;
     display: inline-block; /* Essential to keep it on one line */
-    /* Added to align the text vertically with Plus+ */
     position: relative;
     top: -1px;
 }
@@ -375,4 +373,146 @@ footer {
 
 .footerExtras span:hover {
     color: #2874f0; /* Blue hover effect on extra links */
+}
+/* ------------------------------------------------------------- */
+/* --------------- MOBILE RESPONSIVENESS (Max-width 600px) --------------- */
+/* ------------------------------------------------------------- */
+
+@media (max-width: 600px) {
+    /* --- 1. NAVBAR ADJUSTMENTS --- */
+    .navBar {
+        height: 50px; /* Smaller height for mobile */
+        justify-content: space-between;
+        padding: 0 10px;
+    }
+
+    .logoSection {
+        margin: 0;
+        width: 100px;
+    }
+
+    .flipkart-logo {
+        width: 70px;
+    }
+
+    /* Attribution text can be hidden or made smaller to save space */
+    .my-attribution-text {
+        font-size: 7px;
+    }
+
+    .searchBox {
+        display: none; /* Hide complex search bar on small screens */
+    }
+
+    .loginBox, .becomeSellerBox, .moreBox {
+        display: none; /* Hide extra elements to save space */
+    }
+
+    .cartBox {
+        width: auto;
+        margin-right: 0;
+        font-size: 14px;
+        /* Cart icon is essential, keep it visible */
+    }
+
+    /* --- 2. MENU BAR ADJUSTMENTS --- */
+    .belowNavBar {
+        margin-top: 50px;
+        padding: 5px 0;
+        /* Use overflow to make it horizontally scrollable if too many items */
+        overflow-x: scroll;
+        justify-content: flex-start;
+        -webkit-overflow-scrolling: touch; /* for smooth scrolling on iOS */
+    }
+
+    .smallCard {
+        min-width: 70px; /* Minimum width for each card */
+        padding: 5px 8px;
+        margin: 0 5px;
+    }
+
+    .card {
+        height: 40px;
+        width: 40px;
+    }
+    
+    .smallCard p {
+        font-size: 10px;
+    }
+    
+    /* --- 3. ITEM SECTION ADJUSTMENTS --- */
+    .itemSection {
+        flex-wrap: wrap; /* Allow items to wrap to the next line */
+        padding: 5px;
+        margin: 5px;
+        box-shadow: none; /* Remove section shadow on mobile */
+    }
+
+    .item {
+        width: 48%; /* Two items per row (48% + 48% + margin) */
+        border-right: none;
+        border-bottom: 1px solid #f0f0f0;
+        margin: 1%;
+        padding: 10px 5px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Give each item card a small shadow */
+    }
+
+    .item:nth-child(2n) {
+        border-right: none;
+    }
+    
+    .item:last-child {
+        border-bottom: none;
+    }
+
+    /* Adjust the 'VIEW ALL' header card */
+    .item:first-child {
+        width: 100%; /* Take full width */
+        order: -1; /* Move it to the top */
+        margin-bottom: 10px;
+        background: #fff;
+        padding: 15px;
+        border-bottom: none;
+    }
+
+    .itemHeadName {
+        font-size: 20px;
+    }
+
+    .viewAllButton {
+        width: 90px;
+        height: 30px;
+    }
+
+    .itemImg {
+        height: 100px; /* Smaller image size */
+    }
+
+    .buyNowText {
+        font-size: 13px;
+    }
+
+    /* --- 4. FOOTER ADJUSTMENTS --- */
+    .footerSection {
+        flex-direction: column; /* Stack sections vertically */
+        padding: 20px 10px;
+    }
+    
+    .footerLeft, .footerRight {
+        width: 100%;
+        justify-content: space-between;
+        margin: 0;
+        padding-bottom: 20px;
+    }
+
+    .footerExtras {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+        font-size: 10px;
+    }
+    
+    .footerExtras span {
+        margin: 5px 0;
+    }
 }
