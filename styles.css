@@ -197,7 +197,8 @@ body {
     background-position: center;
     margin: 10px 8px;
     border-radius: 4px;
-    height: 280px;
+    /* CHANGED HEIGHT FOR BETTER DESKTOP/MOBILE TRANSITION */
+    height: 200px; 
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
 }
 
@@ -381,13 +382,13 @@ footer {
 @media (max-width: 600px) {
     /* --- 1. NAVBAR ADJUSTMENTS --- */
     .navBar {
-        height: 50px; /* Smaller height for mobile */
-        justify-content: space-between;
-        padding: 0 10px;
+        height: 50px; 
+        justify-content: space-around; 
+        padding: 0 5px; 
     }
 
     .logoSection {
-        margin: 0;
+        margin: 0 5px;
         width: 100px;
     }
 
@@ -400,33 +401,68 @@ footer {
         font-size: 7px;
     }
 
+    /* 1. Login Button (Show Text, Shrunk) */
+    .loginBox {
+        display: flex;
+        margin: 0 2px; /* Tiny margin */
+    }
+    .login {
+        padding: 5px 10px; 
+        font-size: 12px; /* Smaller text */
+        height: 25px; /* Smaller button */
+        width: auto;
+    }
+
+    /* 2. Search Icon (Show only the Icon) */
     .searchBox {
-        display: none; /* Hide complex search bar on small screens */
+        display: flex;
+        width: 25px; /* Fixed width for icon */
+        background-color: transparent;
+        box-shadow: none;
+        margin: 0 2px;
+    }
+    .input {
+        display: none; /* Hide the wide input field */
+    }
+    .search-logo {
+        background-color: transparent;
+        color: white; /* Show the icon in white */
+        height: auto;
+        padding: 0;
+        width: 100%;
+        font-size: 18px;
     }
 
-    .loginBox, .becomeSellerBox, .moreBox {
-        display: none; /* Hide extra elements to save space */
+    /* 3. Hide non-essential items */
+    .becomeSellerBox, .moreBox {
+        display: none; /* Keep these hidden for critical space */
     }
 
+    /* 4. Cart */
     .cartBox {
         width: auto;
-        margin-right: 0;
         font-size: 14px;
-        /* Cart icon is essential, keep it visible */
+        margin: 0 5px;
     }
 
-    /* --- 2. MENU BAR ADJUSTMENTS --- */
+    /* --- 2. HERO SECTION FIX --- */
+    .heroSection {
+        height: 120px;
+        background-size: contain; /* FIX: Ensures entire image is visible without cropping */
+        background-repeat: no-repeat;
+    }
+    
+    /* --- 3. MENU BAR ADJUSTMENTS --- */
     .belowNavBar {
         margin-top: 50px;
         padding: 5px 0;
-        /* Use overflow to make it horizontally scrollable if too many items */
         overflow-x: scroll;
         justify-content: flex-start;
-        -webkit-overflow-scrolling: touch; /* for smooth scrolling on iOS */
+        -webkit-overflow-scrolling: touch;
     }
 
     .smallCard {
-        min-width: 70px; /* Minimum width for each card */
+        min-width: 70px; 
         padding: 5px 8px;
         margin: 0 5px;
     }
@@ -440,21 +476,21 @@ footer {
         font-size: 10px;
     }
     
-    /* --- 3. ITEM SECTION ADJUSTMENTS --- */
+    /* --- 4. ITEM SECTION ADJUSTMENTS --- */
     .itemSection {
-        flex-wrap: wrap; /* Allow items to wrap to the next line */
+        flex-wrap: wrap; 
         padding: 5px;
         margin: 5px;
-        box-shadow: none; /* Remove section shadow on mobile */
+        box-shadow: none;
     }
 
     .item {
-        width: 48%; /* Two items per row (48% + 48% + margin) */
+        width: 48%; 
         border-right: none;
         border-bottom: 1px solid #f0f0f0;
         margin: 1%;
         padding: 10px 5px;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Give each item card a small shadow */
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1); 
     }
 
     .item:nth-child(2n) {
@@ -467,8 +503,8 @@ footer {
 
     /* Adjust the 'VIEW ALL' header card */
     .item:first-child {
-        width: 100%; /* Take full width */
-        order: -1; /* Move it to the top */
+        width: 100%; 
+        order: -1; 
         margin-bottom: 10px;
         background: #fff;
         padding: 15px;
@@ -485,16 +521,16 @@ footer {
     }
 
     .itemImg {
-        height: 100px; /* Smaller image size */
+        height: 100px; 
     }
 
     .buyNowText {
         font-size: 13px;
     }
 
-    /* --- 4. FOOTER ADJUSTMENTS --- */
+    /* --- 5. FOOTER ADJUSTMENTS --- */
     .footerSection {
-        flex-direction: column; /* Stack sections vertically */
+        flex-direction: column; 
         padding: 20px 10px;
     }
     
